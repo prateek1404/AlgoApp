@@ -26,7 +26,7 @@ var data = fs.readFileSync(__dirname+'/../public/insertionSort.js');
 exports.recursiveInsertionSort = function(req,res)
 {
 res.writeHead(200,{'Content-Type':'text/plain'});
-var data = fs.readFileSync('/home/prateek/NodeWorkspace/SortingAlogs/recursiveInsertionSort.js');
+var data = fs.readFileSync(__dirname+'/../public/recursiveInsertionSort.js');
 
           res.write(data);
           res.end();
@@ -36,7 +36,7 @@ var data = fs.readFileSync('/home/prateek/NodeWorkspace/SortingAlogs/recursiveIn
 exports.selectionSort = function(req,res)
 {
 res.writeHead(200,{'Content-Type':'text/plain'});
-var data = fs.readFileSync('/home/prateek/NodeWorkspace/SortingAlogs/selectionSort.js');
+var data = fs.readFileSync(__dirname+'/../public/selectionSort.js');
 
           res.write(data);
           res.end();
@@ -45,7 +45,7 @@ var data = fs.readFileSync('/home/prateek/NodeWorkspace/SortingAlogs/selectionSo
 exports.bubbleSort = function(req,res)
 {
 res.writeHead(200,{'Content-Type':'text/plain'});
-var data = fs.readFileSync('/home/prateek/NodeWorkspace/SortingAlogs/bubbleSort.js');
+var data = fs.readFileSync(__dirname+'/../public/bubbleSort.js');
 
           res.write(data);
           res.end();
