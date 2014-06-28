@@ -2,7 +2,13 @@
 
 body {
   padding-top:70px;
+  background-color: blue;
+  border-color:black;
 }
 
+#sortingFooter
+{
+color:black;
+}
 
   
