@@ -23,6 +23,35 @@ var data = fs.readFileSync('/home/prateek/NodeWorkspace/SortingAlogs/insertionSo
           res.end();
 
 };
+exports.recursiveInsertionSort = function(req,res)
+{
+res.writeHead(200,{'Content-Type':'text/plain'});
+var data = fs.readFileSync('/home/prateek/NodeWorkspace/SortingAlogs/recursiveInsertionSort.js');
+
+          res.write(data);
+          res.end();
+
+};
+
+exports.selectionSort = function(req,res)
+{
+res.writeHead(200,{'Content-Type':'text/plain'});
+var data = fs.readFileSync('/home/prateek/NodeWorkspace/SortingAlogs/selectionSort.js');
+
+          res.write(data);
+          res.end();
+
+};
+exports.bubbleSort = function(req,res)
+{
+res.writeHead(200,{'Content-Type':'text/plain'});
+var data = fs.readFileSync('/home/prateek/NodeWorkspace/SortingAlogs/bubbleSort.js');
+
+          res.write(data);
+          res.end();
+
+};
+
 
 exports.partial = function (req, res) {
   var name = req.params.name;

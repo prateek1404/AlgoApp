@@ -46,7 +46,9 @@ app.get('/random',routes.random);
 // JSON API
 app.get('/api/name', api.name);
 app.get('/insertionSort',routes.insertionSort);
-
+app.get('/recursiveInsertionSort',routes.recursiveInsertionSort);
+app.get('/selectionSort',routes.selectionSort);
+app.get('/bubbleSort',routes.bubbleSort);
 // redirect all others to the index (HTML5 history)
 //app.get('*', routes.index);
 
