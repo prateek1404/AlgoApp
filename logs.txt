@@ -1,0 +1,30 @@
+2014-06-28T18:01:01.530767+00:00 heroku[api]: Release v2 created by prateek1404@gmail.com
+2014-06-28T18:01:01.530665+00:00 heroku[api]: Enable Logplex by prateek1404@gmail.com
+2014-06-28T18:10:00+00:00 heroku[slug-compiler]: Slug compilation started
+2014-06-28T18:10:04+00:00 heroku[slug-compiler]: Slug compilation failed: failed to compile Node.js app
+2014-06-28T18:16:16+00:00 heroku[slug-compiler]: Slug compilation started
+2014-06-28T18:16:18+00:00 heroku[slug-compiler]: Slug compilation failed: failed to compile Node.js app
+2014-06-28T18:19:00+00:00 heroku[slug-compiler]: Slug compilation started
+2014-06-28T18:19:04+00:00 heroku[slug-compiler]: Slug compilation failed: failed to compile Node.js app
+2014-06-28T18:20:09+00:00 heroku[slug-compiler]: Slug compilation started
+2014-06-28T18:20:17+00:00 heroku[slug-compiler]: Slug compilation finished
+2014-06-28T18:20:17.161387+00:00 heroku[api]: Deploy 9fdfaad by prateek1404@gmail.com
+2014-06-28T18:20:17.161473+00:00 heroku[api]: Release v3 created by prateek1404@gmail.com
+2014-06-28T18:20:41.313419+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=boiling-scrubland-1228.herokuapp.com request_id=337b1e69-fe8f-41d9-a351-ba64ff58ac41 fwd="122.161.63.45" dyno= connect= service= status=503 bytes=
+2014-06-28T18:20:41.870826+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/favicon.ico" host=boiling-scrubland-1228.herokuapp.com request_id=5a9cf6cd-08e4-4e5e-a925-2d61da9b04c2 fwd="122.161.63.45" dyno= connect= service= status=503 bytes=
+2014-06-28T18:20:51.303562+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=boiling-scrubland-1228.herokuapp.com request_id=3f09875e-7b81-46c6-9255-91d0b1c0c635 fwd="122.161.63.45" dyno= connect= service= status=503 bytes=
+2014-06-28T18:20:52.021820+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/favicon.ico" host=boiling-scrubland-1228.herokuapp.com request_id=bf8324a0-61d6-4d9a-991f-36e9f79f21ed fwd="122.161.63.45" dyno= connect= service= status=503 bytes=
+2014-06-28T18:21:01.322090+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=boiling-scrubland-1228.herokuapp.com request_id=ce96964b-e410-4434-9392-973270b3f667 fwd="122.161.63.45" dyno= connect= service= status=503 bytes=
+2014-06-28T18:21:02.025924+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/favicon.ico" host=boiling-scrubland-1228.herokuapp.com request_id=0a594be8-cfe4-404f-bdcc-240a1d41acea fwd="122.161.63.45" dyno= connect= service= status=503 bytes=
+2014-06-28T18:21:18.330327+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=boiling-scrubland-1228.herokuapp.com request_id=24478601-49a1-4d23-a4e3-21464d80ed50 fwd="122.161.63.45" dyno= connect= service= status=503 bytes=
+2014-06-28T18:21:19.212920+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/favicon.ico" host=boiling-scrubland-1228.herokuapp.com request_id=cb395ddf-45b4-4450-8284-0a1742aa8259 fwd="122.161.63.45" dyno= connect= service= status=503 bytes=
+2014-06-28T18:21:24.692505+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=boiling-scrubland-1228.herokuapp.com request_id=ad9491fe-7a31-4e4b-8bab-23427089877c fwd="122.161.63.45" dyno= connect= service= status=503 bytes=
+2014-06-28T18:21:25.227691+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/favicon.ico" host=boiling-scrubland-1228.herokuapp.com request_id=8b111d61-8001-49a2-8fb8-d0a282d22214 fwd="122.161.63.45" dyno= connect= service= status=503 bytes=
+2014-06-28T18:21:45.634135+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=boiling-scrubland-1228.herokuapp.com request_id=9d4c0aa1-3311-47a6-8db6-68cbfa0df463 fwd="122.161.63.45" dyno= connect= service= status=503 bytes=
+2014-06-28T18:21:46.380288+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/favicon.ico" host=boiling-scrubland-1228.herokuapp.com request_id=f5ce3107-00ac-47ab-9f9c-a74d36e47dad fwd="122.161.63.45" dyno= connect= service= status=503 bytes=
+2014-06-28T18:22:03.312325+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=boiling-scrubland-1228.herokuapp.com request_id=d0d10949-ca99-4530-b9cb-effb5d6ba153 fwd="122.161.63.45" dyno= connect= service= status=503 bytes=
+2014-06-28T18:22:04.045359+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/favicon.ico" host=boiling-scrubland-1228.herokuapp.com request_id=1cce9e99-662b-4a18-814d-e742f90c390e fwd="122.161.63.45" dyno= connect= service= status=503 bytes=
+2014-06-28T18:23:59.582333+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=boiling-scrubland-1228.herokuapp.com request_id=0a677ec6-070d-42f2-b589-cd92f7941f3d fwd="122.161.63.45" dyno= connect= service= status=503 bytes=
+2014-06-28T18:24:00.037344+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/favicon.ico" host=boiling-scrubland-1228.herokuapp.com request_id=ae60d9ba-f3c5-4993-8238-7d08ab8b90a7 fwd="122.161.63.45" dyno= connect= service= status=503 bytes=
+2014-06-28T18:25:01.243806+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=boiling-scrubland-1228.herokuapp.com request_id=9c331eed-47c7-4d34-bfa5-93eaa34e338f fwd="122.161.63.45" dyno= connect= service= status=503 bytes=
+2014-06-28T18:25:01.992804+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/favicon.ico" host=boiling-scrubland-1228.herokuapp.com request_id=0e5fb698-ad5d-41f7-90d4-72b04d347c99 fwd="122.161.63.45" dyno= connect= service= status=503 bytes=

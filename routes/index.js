@@ -17,8 +17,8 @@ exports.random = function(req,res){
 exports.insertionSort = function(req,res)
 {
 res.writeHead(200,{'Content-Type':'text/plain'});
-var data = fs.readFileSync('/home/prateek/NodeWorkspace/SortingAlogs/insertionSort.js');
-          
+var data = fs.readFileSync(__dirname+'/../public/insertionSort.js');
+          console.log("insertionSort from DIR "+__dirname);          
           res.write(data);
           res.end();
 
