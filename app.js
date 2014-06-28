@@ -41,13 +41,11 @@ if (app.get('env') === 'production') {
 
 // Routes
 app.get('/', routes.index);
-app.get('/prateek',function(req,res){
-  res.render('index');
-});
 app.get('/partial/:name', routes.partial);
-
+app.get('/random',routes.random);
 // JSON API
 app.get('/api/name', api.name);
+
 
 // redirect all others to the index (HTML5 history)
 //app.get('*', routes.index);
