@@ -2,7 +2,7 @@
 /*
  * GET home page.
  */
-
+var fs = require('fs');
 exports.index = function(req, res){
   console.log("Dir name"+__dirname);
   res.render('index');
@@ -14,6 +14,15 @@ exports.random = function(req,res){
    res.end();
 };
 
+exports.insertionSort = function(req,res)
+{
+res.writeHead(200,{'Content-Type':'text/plain'});
+var data = fs.readFileSync('/home/prateek/NodeWorkspace/SortingAlogs/insertionSort.js');
+          
+          res.write(data);
+          res.end();
+
+};
 
 exports.partial = function (req, res) {
   var name = req.params.name;

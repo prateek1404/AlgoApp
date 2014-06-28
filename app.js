@@ -45,7 +45,7 @@ app.get('/partial/:name', routes.partial);
 app.get('/random',routes.random);
 // JSON API
 app.get('/api/name', api.name);
-
+app.get('/insertionSort',routes.insertionSort);
 
 // redirect all others to the index (HTML5 history)
 //app.get('*', routes.index);
