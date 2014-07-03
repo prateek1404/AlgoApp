@@ -2,6 +2,11 @@
 /**
  * Module dependencies
  */
+var passport = require('passport');
+var FacebookStrategy = require('passport-facebook').Strategy;
+
+var FACEBOOK_APP_ID ='496789037121421';
+var FACEBOOK_APP_SECRET='0860ca2d754499abdaad5d11f2a7379b';
 
 var express = require('express'),
   routes = require('./routes'),
@@ -25,6 +30,8 @@ app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(app.router);
 
 // development only
@@ -37,9 +44,55 @@ if (app.get('env') === 'production') {
   // TODO
 }; 
 
+// Begin the facebook authentication
+
+passport.use(new FacebookStrategy({
+clientID:FACEBOOK_APP_ID,
+clientSecret: FACEBOOK_APP_SECRET,
+callbackURL:'http://localhost:3000/auth/facebook/callback'
+
+},
+function(accessToken,refreshToken,profile,done)
+{
+process.nextTick(function(){
+done(null,profile);
+
+});
+
+}
+));
+
+passport.serializeUser(function(user,done){
+done(null,user);
+
+
+});
+
+passport.deserializeUser(function(obj,done){
+
+done(null,obj);
+
+});
 
 
 // Routes
+
+// Facebook routes
+
+app.get('/auth/facebook',passport.authenticate('facebook'));
+app.get('/auth/facebook/callback',passport.authenticate('facebook',{
+successRedirect:'/',
+failuredRedirect:'error'
+}
+
+));
+
+app.get('/error',function(req,res){
+
+res.send("<h>Error Logging In</h><br><a href='/'>Go To Home page</>");
+
+});
+
 app.get('/', routes.index);
 //app.get('/partial/:name', routes.partial);
 app.get('/random',routes.random);
