@@ -4,7 +4,7 @@
  */
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
-
+var fs = require('fs');
 var FACEBOOK_APP_ID ='496789037121421';
 var FACEBOOK_APP_SECRET='0860ca2d754499abdaad5d11f2a7379b';
 
@@ -22,18 +22,22 @@ var app = module.exports = express();
 */
 
 // all environments
+app.configure(function(){
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
-console.log("Directory name "+__dirname);
 app.set('view engine', 'jade');
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
+app.use(express.cookieParser());
+app.use(express.session({ secret: 'keyboard cat' }));
 app.use(express.methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(app.router);
-
+}
+);
+var userName ="Not Logged in";
 // development only
 if (app.get('env') === 'development') {
    app.use(express.errorHandler());
@@ -44,7 +48,7 @@ if (app.get('env') === 'production') {
   // TODO
 }; 
 
-// Begin the facebook authentication
+// Begin the facebook authentication middleware declaration
 
 passport.use(new FacebookStrategy({
 clientID:FACEBOOK_APP_ID,
@@ -54,8 +58,15 @@ callbackURL:'http://localhost:3000/auth/facebook/callback'
 },
 function(accessToken,refreshToken,profile,done)
 {
+console.log("Profile is "+profile.displayName);
+userName = "Welcome "+profile.dispalyName;
+
 process.nextTick(function(){
-done(null,profile);
+var user = {};
+user.id = profile.id;
+user.name = profile.displayName;
+
+done(null,user);
 
 });
 
@@ -63,14 +74,16 @@ done(null,profile);
 ));
 
 passport.serializeUser(function(user,done){
+console.log("Serializing object username :"+user.name);
+console.log("user id :"+user.id);
 done(null,user);
 
 
 });
 
-passport.deserializeUser(function(obj,done){
-
-done(null,obj);
+passport.deserializeUser(function(user,done){
+console.log("deserializing user name = "+user.name+" user id ="+user.id);
+done(null,user);
 
 });
 
@@ -81,8 +94,9 @@ done(null,obj);
 
 app.get('/auth/facebook',passport.authenticate('facebook'));
 app.get('/auth/facebook/callback',passport.authenticate('facebook',{
-successRedirect:'/',
-failuredRedirect:'error'
+successRedirect:'/home',
+failuredRedirect:'/error',
+  session: true
 }
 
 ));
@@ -94,6 +108,11 @@ res.send("<h>Error Logging In</h><br><a href='/'>Go To Home page</>");
 });
 
 app.get('/', routes.index);
+app.get('/home',function(req,res){
+   
+   res.render('home',{ user:req.user });
+
+});
 //app.get('/partial/:name', routes.partial);
 app.get('/random',routes.random);
 // JSON API

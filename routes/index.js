@@ -5,7 +5,7 @@
 var fs = require('fs');
 exports.index = function(req, res){
   console.log("Dir name"+__dirname);
-  res.render('home');
+  res.render('index');
 };
 exports.random = function(req,res){
    res.writeHead(200,{"Content-Type": 'text/xml'                
