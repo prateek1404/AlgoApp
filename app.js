@@ -52,8 +52,7 @@ if (app.get('env') === 'production') {
 passport.use(new FacebookStrategy({
 clientID:FACEBOOK_APP_ID,
 clientSecret: FACEBOOK_APP_SECRET,
-callbackURL:'http://localhost:3000/auth/facebook/callback'
-//callbackURL:'http://boiling-scrubland-1228.herokuapp.com/auth/facebook/callback'
+callbackURL:'http://boiling-scrubland-1228.herokuapp.com/auth/facebook/callback'
 },
 function(accessToken,refreshToken,profile,done)
 {
