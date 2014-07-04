@@ -4,7 +4,6 @@
  */
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
-var fs = require('fs');
 var FACEBOOK_APP_ID ='496789037121421';
 var FACEBOOK_APP_SECRET='0860ca2d754499abdaad5d11f2a7379b';
 
@@ -59,14 +58,9 @@ callbackURL:'http://localhost:3000/auth/facebook/callback'
 function(accessToken,refreshToken,profile,done)
 {
 console.log("Profile is "+profile.displayName);
-userName = "Welcome "+profile.dispalyName;
-
 process.nextTick(function(){
-var user = {};
-user.id = profile.id;
-user.name = profile.displayName;
-
-done(null,user);
+console.log(Object.keys(profile));
+done(null,profile);
 
 });
 
@@ -74,7 +68,7 @@ done(null,user);
 ));
 
 passport.serializeUser(function(user,done){
-console.log("Serializing object username :"+user.name);
+console.log("Serializing object username :"+user.displayName);
 console.log("user id :"+user.id);
 done(null,user);
 
@@ -82,7 +76,7 @@ done(null,user);
 });
 
 passport.deserializeUser(function(user,done){
-console.log("deserializing user name = "+user.name+" user id ="+user.id);
+console.log("deserializing user name = "+user.displayName+" user id ="+user.id);
 done(null,user);
 
 });

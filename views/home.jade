@@ -8,8 +8,8 @@ block body
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand(href="/auth/facebook") Welcome  
-        b #{user.name}!
+      a.navbar-brand(href="#{user.profileUrl}") Welcome  
+        b #{user.displayName}!
     
   .container      
     div(ng-controller='AppCtrl')
