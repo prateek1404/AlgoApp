@@ -10,11 +10,30 @@ function AppCtrl($scope, $http) {
   error(function(data, status, headers, config) {
     $scope.name = 'Error!'
   });
+  
+  $http.get('/algos').success(function(data)
+  {
+  this.sortingAlgos = data;
+
+   });
+
+  
 }
 
 function MyCtrl1() {}
 MyCtrl1.$inject = [];
 
+function AlgoCtrl($scope,$http)
+{
+$http.get('/algos').success(function(data)
+{
+this.sortingAlgos = data;
+
+}
+
+
+);
+}
 
 function MyCtrl2() {
 }

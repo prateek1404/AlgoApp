@@ -51,9 +51,22 @@ var data = fs.readFileSync(__dirname+'/../public/bubbleSort.js');
           res.end();
 
 };
+exports.heapSort = function(req,res)
+{
+res.writeHead(200,{'Content-Type':'text/plain'});
+var data = fs.readFileSync(__dirname+'/../public/heapSort.js');
 
+          res.write(data);
+          res.end();
 
-exports.partial = function (req, res) {
-  var name = req.params.name;
-  res.render('partials/partial' + name);
 };
+exports.mergeSort = function(req,res)
+{
+res.writeHead(200,{'Content-Type':'text/plain'});
+var data = fs.readFileSync(__dirname+'/../public/mergeSort.js');
+
+          res.write(data);
+          res.end();
+
+};
+

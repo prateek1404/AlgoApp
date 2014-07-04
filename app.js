@@ -94,6 +94,19 @@ failuredRedirect:'/error',
 }
 
 ));
+app.get('/algos',function(req,res){
+   var sortingAlgos = [];
+   sortingAlgos.push({name:'Insertion Sort',link:'/insertionSort'});
+
+   sortingAlgos.push({name:'Insertion Sort(Iterative)',link:'/iterativeInsertionSort'});
+   sortingAlgos.push({name:'Bubble Sort',link:'/bubbleSort'});
+   sortingAlgos.push({name:'Selection',link:'/selectionSort'});
+   sortingAlgos.push({name:'Merge Sort',link:'/mergeSort'});
+   sortingAlgos.push({name:'Heap Sort',link:'/heapSort'});
+   res.json(sortingAlgos);
+
+
+});
 
 app.get('/error',function(req,res){
 
@@ -104,7 +117,17 @@ res.send("<h>Error Logging In</h><br><a href='/'>Go To Home page</>");
 app.get('/', routes.index);
 app.get('/home',function(req,res){
    
-   res.render('home',{ user:req.user });
+   var sortingAlgos = [];
+   sortingAlgos.push({name:'Insertion Sort',link:'/insertionSort'});
+
+   sortingAlgos.push({name:'Insertion Sort(Iterative)',link:'/iterativeInsertionSort'});
+   sortingAlgos.push({name:'Bubble Sort',link:'/bubbleSort'});
+   sortingAlgos.push({name:'Selection',link:'/selectionSort'});
+   sortingAlgos.push({name:'Merge Sort',link:'/mergeSort'});
+   sortingAlgos.push({name:'Heap Sort',link:'/heapSort'});
+
+
+   res.render('home',{ user:req.user,sortingAlgos: sortingAlgos});
 
 });
 //app.get('/partial/:name', routes.partial);
@@ -115,6 +138,11 @@ app.get('/insertionSort',routes.insertionSort);
 app.get('/recursiveInsertionSort',routes.recursiveInsertionSort);
 app.get('/selectionSort',routes.selectionSort);
 app.get('/bubbleSort',routes.bubbleSort);
+app.get('/mergeSort',routes.mergeSort);
+app.get('/heapSort',routes.heapSort);
+
+
+
 // redirect all others to the index (HTML5 history)
 //app.get('*', routes.index);
 
